@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="formcontainer">
+            <h3>Add Employee</h3>
+        </div>
+    </div>
+    <div class="row">
+        <label>First Name:</label>
+        <input #firstName type="text" />
+    </div>
+    <div class="row">
+        <label>Last Name:</label>
+        <input #lastName type="text" />
+    </div>
+    <div class="row">
+        <label>Designation:</label>
+        <input #designation type="text" />
+    </div>
+    <div class="row">
+        <label>City:</label>
+        <input #city type="text" />
+    </div>
+    <div class="row">
+        <label>Project ID:</label>
+        <input #projectId type="text" />
+    </div>
+    <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+            <button (click)="create(firstName.value, lastName.value, designation.value, city.value, projectId.value)" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tablecontainer">
+            <kendo-grid [data]="gridData" [height]="400">
+                <kendo-grid-column *ngFor="let col of columns" [field]="col.field"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+    </div>
+</div>
